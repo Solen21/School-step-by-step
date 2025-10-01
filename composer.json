@@ -1,0 +1,15 @@
+{
+    "name": "your-name/african-chool-management-system",
+    "description": "A school management system.",
+    "type": "project",
+    "require": {
+        "php": ">=8.0",
+        "stichoza/google-translate-php": "^4.1",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "authors": [
+        {
+            "name": "Your Name"
+        }
+    ]
+}
