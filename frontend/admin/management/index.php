@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+// Security check
+$allowed_roles = ['admin', 'super_director', 'director'];
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !in_array($_SESSION['role'], $allowed_roles)) {
+    header("location: ../../index.php");
+    exit;
+}
+
 include "../../includes/header.php";
 ?>
 <div class="container mt-5">
@@ -38,20 +47,20 @@ include "../../includes/header.php";
         <div class="col-md-4 mb-3">
             <div class="card text-center h-100 shadow-sm">
                 <div class="card-body">
-                    <i class="fas fa-user-graduate fa-3x text-warning mb-3"></i>
-                    <h5 class="card-title">Manage Students</h5>
-                    <p class="card-text">View, add, and edit student records.</p>
-                    <a href="students.php" class="btn btn-warning">Go to Students</a>
+                    <i class="fas fa-book fa-3x text-secondary mb-3"></i>
+                    <h5 class="card-title">Manage Subjects</h5>
+                    <p class="card-text">Define the subjects taught for each grade level.</p>
+                    <a href="subjects.php" class="btn btn-secondary">Go to Subjects</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-3">
             <div class="card text-center h-100 shadow-sm">
                 <div class="card-body">
-                    <i class="fas fa-book fa-3x text-secondary mb-3"></i>
-                    <h5 class="card-title">Manage Subjects</h5>
-                    <p class="card-text">Define the subjects taught for each grade level.</p>
-                    <a href="subjects.php" class="btn btn-secondary">Go to Subjects</a>
+                    <i class="fas fa-user-graduate fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title">Manage Students</h5>
+                    <p class="card-text">View, add, and edit student records.</p>
+                    <a href="students.php" class="btn btn-warning">Go to Students</a>
                 </div>
             </div>
         </div>

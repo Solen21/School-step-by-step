@@ -107,6 +107,7 @@ $sql_students = "CREATE TABLE IF NOT EXISTS students (
     registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     photo_path VARCHAR(255) DEFAULT NULL,
+    document_path VARCHAR(255) DEFAULT NULL,
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (section_id) REFERENCES sections(section_id) ON DELETE SET NULL
 )";
